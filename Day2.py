@@ -6,7 +6,7 @@
 ####################
 #1. Boolean Algebra#
 ####################
-
+"""
 #1.1. Boolean Variables: True and False
 t = (1 == 1)
 print(t)
@@ -116,10 +116,54 @@ if(n%2 == 0):
         print('n은 짝수이지만, 3으로 나눈 나머지는 2입니다.')
 else:
     print('n은 홀수입니다')
-
+"""
 
 #Control Flow 2: while
+print('특정 조건 아래서 계속 반복해야 할 일은 while을 사용한다!')
+print('보통 while 문은 반복될 때 마다 증가하는 count 변수를 같이 쓰는 경우가 많다.')
+
+print('자연수를 넣어주세요:')
+n = int(input())
+count = 1
+
+while(count <= n):
+    print('*'*count)
+    count += 1
+
+#Control Flow 2.1: continue
+print('continue는 아래 내용을 모두 무시하고 바로 while문의 처음으로 되돌아가게 한다')
+
+a = 0
+while(a < 10):
+    if(a % 2 == 0):
+        print(a,': 짝수입니다.')
+        a += 1
+    else:
+        a += 1
+        continue
+#만약 else: 밑에 a+=1를 안 하면 어떻게 될까?
 
 
+#Control Flow 2.2: break
+print('break는 아래 내용을 모두 무시하고 바로 while문 밖으로 빠져나간다')
+
+coffee = 10
+while True:
+    money = int(input("돈을 넣어 주세요: "))
+    if money == 300:
+        print("커피를 줍니다.")
+        coffee = coffee -1
+    elif money > 300:
+        print("거스름돈 %d를 주고 커피를 줍니다." % (money -300))
+        coffee = coffee -1
+    else:
+        print("돈을 다시 돌려주고 커피를 주지 않습니다.")
+        print("남은 커피의 양은 %d개 입니다." % coffee)
+    if coffee == 0:
+        print("커피가 다 떨어졌습니다. 판매를 중지 합니다.")
+        break
+
+#구구단 만들어 보기
 
 #Control Flow 3: for
+#리스트까지 배우고 오자!
